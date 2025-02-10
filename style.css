@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,*::after,*::before{
+box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 99vw;
+    height: 100vh;
+    background-color: black;
+}
+ 
+section{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px 100px 0px 95px;
+}
+
+section::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, transparent 55% 50%,rgba(0, 0, 0, 0.827) 80% 100%);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+header {
+    font-family: "Poppins",serif;
+    position: relative;
+    z-index: 1;
+    height: 75px;
+    border-bottom: 1.35px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .left {
+    width: 660px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0px 20px;
+    padding-bottom: 10px;
+    
+}
+
+header nav {
+    display: flex;
+    gap: 0px 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 550;
+    color: white;
+    font-family: "Inter", serif;
+    font-size: 0.95rem;
+}
+
+header .right {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    gap: 0px 25px;
+}
+
+header .right i {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+header .right  {
+    position: relative;
+
+}
+header .right a::after {
+    width: 15px;
+    height: 5px;
+    position: absolute;
+    padding-bottom: -10px;
+    color: blue;
+}
+
+header .right i:hover{
+    cursor: pointer;
+    text-decoration: underline blue;
+}
+
+section .hero-section{
+    width: 100%;
+    height: calc(100%-80px);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+section .hero-section .hero-content {
+    width: 470px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 580px 0px;
+    color: white;
+}
+
+section .p1 {
+    font-family: "Montserrat", serif;
+    letter-spacing: 5px;
+    font-size: 18px;
+    margin-bottom: -60px;
+}
+
+section .p2 {
+    font-family: "Montserrat", serif;
+    font-size: 230px;
+    font-weight: 300;
+    margin-bottom: -50px;
+}
+
+section h2 {
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    margin-bottom: -5px;
+}
+
+section .p3 {
+    font-weight: 400;
+    font-family: "Montserrat", serif;
+    margin-block: 20px 40px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+section .btn {
+    font-family: "Inter", serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #1c69d4;
+    color: white;
+    padding: 16px 55px;
+    border-radius: 5px;
+}
+
+.left .logo {
+    margin-left: -15px;
+}
+.left .logo img{
+    width: 85px;
+}
+
+.fixed-button {
+    position: fixed; 
+    bottom: 200px; 
+    right: 60px; 
+    background-color: white; 
+    color: black; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 50%; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
+}
+
+.fixed-button:hover {
+    background-color: rgb(218, 214, 214);
+}
