@@ -1,38 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
 
-*,*::after,*::before{
-box-sizing: border-box;
-}
-
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width: 99vw;
+body {
+    width: 100vw;
     height: 100vh;
     background-color: black;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
 }
- 
-section{
+
+/* Section - Video Background */
+section {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
-    padding: 10px 100px 0px 95px;
+    padding: 10px 100px;
 }
 
 section::after {
     content: "";
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to left, transparent 55% 50%,rgba(0, 0, 0, 0.827) 80% 100%);
+    background: linear-gradient(to left, transparent 50%, rgba(0, 0, 0, 0.85) 100%);
     position: absolute;
     inset: 0;
     z-index: 0;
 }
 
-section video {
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -42,151 +42,258 @@ section video {
     z-index: -2;
 }
 
+/* HEADER STYLING */
 header {
-    font-family: "Poppins",serif;
-    position: relative;
-    z-index: 1;
-    height: 75px;
-    border-bottom: 1.35px solid #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-header .left {
-    width: 660px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 0px 20px;
-    padding-bottom: 10px;
-    
-}
-
-header nav {
-    display: flex;
-    gap: 0px 25px;
-}
-
-header nav a {
-    text-decoration: none;
-    font-weight: 550;
-    color: white;
-    font-family: "Inter", serif;
-    font-size: 0.95rem;
-}
-
-header .right {
-    width: 160px;
-    display: flex;
-    align-items: center;
-    gap: 0px 25px;
-}
-
-header .right i {
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-
-header .right  {
+    height: 75px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
-
-}
-header .right a::after {
-    width: 15px;
-    height: 5px;
-    position: absolute;
-    padding-bottom: -10px;
-    color: blue;
+    z-index: 10;
 }
 
-header .right i:hover{
+/* Logo */
+.logo img {
+    width: 70px;
     cursor: pointer;
-    text-decoration: underline blue;
 }
 
-section .hero-section{
+/* Navigation Bar */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1c69d4;
+}
+
+/* Right Icons */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right a i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.right a i:hover {
+    color: #1c69d4;
+}
+
+/* Hide Mobile Nav & Show Hamburger by Default */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
     width: 100%;
-    height: calc(100%-80px);
-    position: relative;
-    z-index: 1;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: -2px 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+    display: block;
+}
+
+/* Mobile Nav Header */
+
+.mobile-nav-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    padding-bottom: 20px;
+    gap: 30px;
+}
+
+.mobile-nav-header a i {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.mob-list a {
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+    margin-left: 7%;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Close Button */
+#close-menu {
+    color: black;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero-section {
     display: flex;
     align-items: flex-end;
+    height: calc(100% - 80px);
+    position: relative;
+    z-index: 1;
 }
 
-section .hero-section .hero-content {
-    width: 470px;
-    height: 560px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 580px 0px;
+.hero-content {
     color: white;
+    padding-bottom: 100px;
 }
 
-section .p1 {
-    font-family: "Montserrat", serif;
+.p1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
     letter-spacing: 5px;
-    font-size: 18px;
-    margin-bottom: -60px;
 }
 
-section .p2 {
-    font-family: "Montserrat", serif;
-    font-size: 230px;
+.p2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 140px;
     font-weight: 300;
-    margin-bottom: -50px;
+    margin-top: -20px;
 }
 
-section h2 {
-    font-family: "Montserrat", serif;
-    font-weight: 400;
-    margin-bottom: -5px;
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: -10px;
 }
 
-section .p3 {
-    font-weight: 400;
-    font-family: "Montserrat", serif;
-    margin-block: 20px 40px;
+.p3 {
     font-size: 18px;
-    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: 400;
 }
 
-section .btn {
-    font-family: "Inter", serif;
+/* BMW Styled Button */
+.btn {
     font-size: 15px;
     font-weight: 600;
     background-color: #1c69d4;
     color: white;
     padding: 16px 55px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-.left .logo {
-    margin-left: -15px;
-}
-.left .logo img{
-    width: 85px;
+.btn:hover {
+    background-color: #144a9c;
 }
 
+/* Floating Contact Button */
 .fixed-button {
-    position: fixed; 
-    bottom: 200px; 
-    right: 60px; 
-    background-color: white; 
-    color: black; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 50%; 
-    font-size: 1.1rem; 
-    cursor: pointer; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    z-index: 1000; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 .fixed-button:hover {
     background-color: rgb(218, 214, 214);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    section {
+        padding: 10px 20px;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-content {
+        padding-bottom: 10px;
+        text-align: center;
+        margin-inline: 35%;
+    }
+
+    .p2 {
+        font-size: 100px;
+    }
+
+    .btn {
+        padding: 12px 40px;
+    }
+
+    .fixed-button {
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin-inline: 30%;
+    }
 }
